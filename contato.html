@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Kauã Konzen</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Estilos da Página de Contato --- */
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .contact-wrapper h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-wrapper p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cartões de Contato */
+        .contact-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .card-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Feedback visual ao copiar */
+        .copy-feedback {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.7rem;
+            background: #000;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .contact-card.copied .copy-feedback {
+            opacity: 1;
+        }
+
+        /* Área de Localização */
+        .location-area {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Kauã Konzen</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Quem Sou</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="contato.html" class="active">Links</a></li>
+            </ul>
+        </nav>
+
+        <main class="contact-wrapper">
+            <h1>Vamos Conversar?</h1>
+            <p>
+                Seja para falar sobre Growth, tecnologia ou parcerias comerciais.<br>
+                Estou sempre aberto a propostas que façam sentido.
+            </p>
+
+            <div class="contact-grid">
+                
+                <div class="contact-card" onclick="copyEmail(this)">
+                    <span class="copy-feedback">Copiado!</span>
+                    <div class="icon">✉️</div>
+                    <div class="card-title">Email</div>
+                    <div class="card-info">kauagasparetto@gmail.com</div>
+                    <div style="font-size: 0.7rem; color: #999; margin-top: 10px;">(Clique para copiar)</div>
+                </div>
+
+                <a href="https://wa.me/5555936186846" target="_blank" class="contact-card">
+                    <div class="icon">📱</div>
+                    <div class="card-title">WhatsApp</div>
+                    <div class="card-info">Chamar agora</div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/kauakonzen/" target="_blank" class="contact-card">
+                    <div class="icon">💼</div>
+                    <div class="card-title">LinkedIn</div>
+                    <div class="card-info">Conectar</div>
+                </a>
+
+                <a href="https://github.com/" target="_blank" class="contact-card">
+                    <div class="icon">💻</div>
+                    <div class="card-title">GitHub</div>
+                    <div class="card-info">Ver Código</div>
+                </a>
+
+            </div>
+
+            <div class="location-area">
+                📍 Baseado em Santa Rosa, Rio Grande do Sul.<br>
+                Disponível para projetos remotos.
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kauã Gasparetto Zavacki Konzen.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyEmail(cardElement) {
+            const email = "kauagasparetto@gmail.com";
+            
+            // Cria um elemento temporário para copiar
+            const el = document.createElement('textarea');
+            el.value = email;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            // Feedback visual
+            cardElement.classList.add('copied');
+            
+            // Remove o feedback depois de 2 segundos
+            setTimeout(() => {
+                cardElement.classList.remove('copied');
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

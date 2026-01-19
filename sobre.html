@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Sou | Kauã Konzen</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Estilos da Página Sobre --- */
+        
+        /* Hero Section com Foto */
+        .about-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .header-content .tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        /* Placeholders para Fotos (Substitua depois por <img>) */
+        .photo-placeholder {
+            background-color: #e0e0e0;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-weight: bold;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .photo-placeholder::after {
+            content: "📷 Espaço para Foto";
+            font-size: 0.9rem;
+        }
+
+        /* Layout Zig-Zag */
+        .zigzag-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .zigzag-section.reverse {
+            direction: rtl; /* Truque para inverter a ordem visual */
+        }
+
+        .zigzag-section.reverse > * {
+            direction: ltr; /* Volta o texto ao normal */
+        }
+
+        .text-block h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .text-block p {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        /* Galeria Lifestyle */
+        .lifestyle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .lifestyle-item {
+            height: 250px;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsividade para Celular */
+        @media (max-width: 768px) {
+            .about-header, .zigzag-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .zigzag-section.reverse {
+                direction: ltr;
+            }
+            .lifestyle-grid {
+                grid-template-columns: 1fr;
+            }
+            .photo-placeholder {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Kauã Konzen</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html" class="active">Quem Sou</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="contato.html">Links</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="about-header">
+                <div class="header-content">
+                    <h1>Mente de Negócios,<br>Ferramentas de Tech.</h1>
+                    <p class="tagline">
+                        Não sou apenas um programador, nem apenas um vendedor. Sou o elo que conecta os dois mundos para gerar resultado.
+                    </p>
+                </div>
+                <div class="photo-placeholder" style="background-color: #ddd;">
+                    </div>
+            </section>
+
+            <section class="zigzag-section">
+                <div class="text-block">
+                    <h2>A Convergência</h2>
+                    <p>Minha trajetória não começou com códigos, mas com a ambição de empreender. Desde os 12 anos, eu queria construir estruturas que funcionassem.</p>
+                    <p>Quando entrei na tecnologia, não vi como uma troca de carreira, mas como uma <strong>aquisição de arsenal</strong>. Hoje, uso a TI para potencializar o que eu já sabia sobre vendas e gestão.</p>
+                </div>
+                <div class="photo-placeholder"></div>
+            </section>
+
+            <section class="zigzag-section reverse">
+                <div class="text-block">
+                    <h2>Empreendendo na Prática</h2>
+                    <p>Essa mentalidade resultou na fundação da <strong>Creauth</strong>. Não é um projeto de escola; é um negócio real onde lidero estratégias e validamos ofertas.</p>
+                    <p>Meu foco é garantir que tenhamos uma operação sólida e escalável, unindo Growth Marketing com automação inteligente.</p>
+                </div>
+                <div class="photo-placeholder"></div>
+            </section>
+
+            <section style="margin-top: 100px; margin-bottom: 80px;">
+                <h2 style="text-align: center; margin-bottom: 10px;">O Lado "Off-Screen"</h2>
+                <p style="text-align: center; color: #666; max-width: 600px; margin: 0 auto;">
+                    Para manter a performance alta no digital, busco equilíbrio no mundo real. Natureza, leitura e treino são inegociáveis.
+                </p>
+                
+                <div class="lifestyle-grid">
+                    <div class="lifestyle-item">Foto: Academia/Treino</div>
+                    <div class="lifestyle-item">Foto: Natureza/Viagem</div>
+                    <div class="lifestyle-item">Foto: Livros/Estudos</div>
+                </div>
+            </section>
+
+            <div style="text-align: center; padding: 60px 0; background-color: #fafafa; border-radius: 8px;">
+                <h3>Quer ver o resultado dessa mistura?</h3>
+                <br>
+                <a href="projetos.html" class="btn">Conheça meus Projetos</a>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kauã Gasparetto Zavacki Konzen.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

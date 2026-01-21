@@ -110,3 +110,180 @@ footer {
     border-top: 1px solid var(--gray-light);
     margin-top: 80px;
 }
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    /* Faz a imagem preencher todo o espaço sem distorcer, cortando as sobras */
+    object-fit: cover; 
+    /* Garante que o centro da imagem seja o foco do corte */
+    object-position: center; 
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-image-container {
+        height: auto;
+        aspect-ratio: 16 / 9; /* Mantém uma proporção horizontal de cinema no celular */
+        box-shadow: none;
+    }
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+
+.hero h1, .hero-text h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem); 
+    line-height: 1.1;
+    word-wrap: break-word; 
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+
+    nav ul {
+        gap: 15px; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.85rem; 
+    }
+
+   
+    .container {
+        padding: 0 15px; 
+    }
+}
+
+
+img {
+    max-width: 100%; 
+    height: auto;
+}
+
+/* --- Correção da Hero Section --- */
+
+.hero-image-container {
+    width: 100%;         
+    max-width: 100%;    
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 20px 20px 0px var(--gray-light);
+    display: block;      
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .hero-image-container {
+        height: auto;
+        aspect-ratio: 16 / 9; 
+        box-shadow: none;     
+        margin: 0 auto;       
+    }
+    
+    .container {
+        padding: 0 20px;      
+        overflow: hidden;    
+    }
+}
+
+/* Container principal - esconde o que vaza da tela */
+.tech-stack {
+    width: 100%;
+    overflow: hidden; 
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 30px 0; /* Aumentei um pouco o respiro */
+}
+
+/* A faixa que realmente se move */
+.tech-stack-track {
+    display: flex;
+    width: max-content; /* Importante: faz a faixa ter o tamanho real dos itens */
+    animation: scroll-infinito 20s linear infinite;
+}
+
+.tech-stack span {
+    display: inline-block;
+    padding: 0 30px; /* Espaçamento consistente entre itens */
+}
+
+/* A lógica do movimento */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente metade da largura total (já que duplicamos o conteúdo) */
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa a animação quando o usuário passa o mouse (opcional, mas profissional) */
+
+
+.tech-stack::before,
+.tech-stack::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px; /* Tamanho do degradê */
+    height: 100%;
+    z-index: 2;
+}
+
+.tech-stack::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color), transparent);
+}
+
+.tech-stack::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color), transparent);
+}
+
+/* 1. Trava de segurança absoluta no nível da página */
+html, body {
+    overflow-x: hidden; 
+    width: 100%;
+    position: relative;
+}
+
+/* 2. Reforce o container do carrossel */
+.tech-stack {
+    width: 100%;
+    max-width: 100%; /* Garante que nunca passe da largura da "janela" */
+    overflow: hidden; /* Isso DEVE estar aqui para esconder a duplicata */
+    position: relative;
+}

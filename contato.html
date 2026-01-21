@@ -3,186 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Kauã Konzen</title>
+    
+    <title>Contato | Kauã Konzen - Especialista em Marketing e Estratégia</title>
+    <meta name="description" content="Entre em contato com Kauã Konzen. Canais oficiais para networking profissional, consultoria em marketing digital e estratégias de crescimento.">
+    <link rel="canonical" href="https://seudominio.com.br/contato.html">
+    <meta name="author" content="Kauã Konzen">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contato | Kauã Konzen">
+    <meta property="og:description" content="Conecte-se com Kauã Konzen para projetos de marketing e parcerias profissionais.">
+    <meta property="og:url" content="https://seudominio.com.br/contato.html">
+    <meta property="og:image" content="https://seudominio.com.br/assets/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kauã Gasparetto Zavacki Konzen",
+        "jobTitle": "Growth Marketer & Empreendedor",
+        "url": "https://seudominio.com.br",
+        "sameAs": [
+          "https://www.linkedin.com/in/kauakonzen/",
+          "https://youtube.com/@kauakonzen"
+        ]
+      },
+      "description": "Página de contato oficial de Kauã Konzen para serviços de marketing e networking."
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- Estilos da Página de Contato --- */
+        :root {
+            --accent-color: #000000;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+        }
+
         .contact-wrapper {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 20px;
         }
 
         .contact-wrapper h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .contact-wrapper p {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+            line-height: 1.5;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
         }
 
-        /* Cartões de Contato */
         .contact-card {
             background: #fff;
-            border: 1px solid #eee;
-            padding: 30px;
-            border-radius: 12px;
+            border: 1px solid #e5e5e7;
+            padding: 40px 20px;
+            border-radius: 16px;
             text-decoration: none;
             color: var(--text-primary);
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
         }
 
         .contact-card:hover {
             border-color: var(--accent-color);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
         }
 
         .icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
         .card-title {
             font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         .card-info {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
         }
 
-        /* Feedback visual ao copiar */
-        .copy-feedback {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 0.7rem;
-            background: #000;
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .contact-card.copied .copy-feedback {
-            opacity: 1;
-        }
-
-        /* Área de Localização */
         .location-area {
             margin-top: 80px;
             padding-top: 40px;
             border-top: 1px solid #eee;
-            color: #777;
+            color: #888;
             font-size: 0.9rem;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <nav>
+        <nav role="navigation" aria-label="Menu Principal">
             <a href="index.html" class="logo">Kauã Konzen</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Quem Sou</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="contato.html" class="active">Links</a></li>
+                <li><a href="contato.html" class="active" aria-current="page">Contato</a></li>
             </ul>
         </nav>
 
         <main class="contact-wrapper">
-            <h1>Vamos Conversar?</h1>
+            <h1>Conecte-se comigo</h1>
             <p>
-                Seja para falar sobre Growth, tecnologia ou parcerias comerciais.<br>
-                Estou sempre aberto a propostas que façam sentido.
+                Interessado em resultados ou quer acompanhar minha jornada no marketing?<br>Escolha o melhor canal abaixo para conversarmos.
             </p>
 
             <div class="contact-grid">
-                
-                <div class="contact-card" onclick="copyEmail(this)">
-                    <span class="copy-feedback">Copiado!</span>
-                    <div class="icon">✉️</div>
-                    <div class="card-title">Email</div>
-                    <div class="card-info">kauagasparetto@gmail.com</div>
-                    <div style="font-size: 0.7rem; color: #999; margin-top: 10px;">(Clique para copiar)</div>
-                </div>
 
-                <a href="https://wa.me/5555936186846" target="_blank" class="contact-card">
-                    <div class="icon">📱</div>
-                    <div class="card-title">WhatsApp</div>
-                    <div class="card-info">Chamar agora</div>
-                </a>
-
-                <a href="https://www.linkedin.com/in/kauakonzen/" target="_blank" class="contact-card">
-                    <div class="icon">💼</div>
+                <a href="https://www.linkedin.com/in/kauakonzen/" target="_blank" class="contact-card" title="Perfil profissional de Kauã Konzen no LinkedIn">
+                    <div class="icon" aria-hidden="true">🤝</div>
                     <div class="card-title">LinkedIn</div>
-                    <div class="card-info">Conectar</div>
+                    <div class="card-info">Networking Profissional</div>
                 </a>
 
-                <a href="https://github.com/" target="_blank" class="contact-card">
-                    <div class="icon">💻</div>
-                    <div class="card-title">GitHub</div>
-                    <div class="card-info">Ver Código</div>
+                <a href="https://wa.me/5555936186846?text=ol%C3%A1%2C%20vim%20pelo%20site!" target="_blank" class="contact-card" title="Falar diretamente pelo WhatsApp">
+                    <div class="icon" aria-hidden="true">💬</div>
+                    <div class="card-title">WhatsApp</div>
+                    <div class="card-info">Vamos conversar</div>
                 </a>
 
-            </div>
+                <a href="https://youtube.com/@kauakonzen" target="_blank" class="contact-card" title="Canal de YouTube de Kauã Konzen">
+                    <div class="icon" aria-hidden="true">📺</div>
+                    <div class="card-title">YouTube</div>
+                    <div class="card-info">Conteúdo e Estratégia</div>
+                </a>
 
-            <div class="location-area">
-                📍 Baseado em Santa Rosa, Rio Grande do Sul.<br>
-                Disponível para projetos remotos.
             </div>
 
         </main>
 
         <footer>
-            <p>&copy; 2026 Kauã Gasparetto Zavacki Konzen.</p>
+            <p>&copy; 2026 Kauã Gasparetto Zavacki Konzen. <br>Todos os direitos reservados.</p>
         </footer>
     </div>
-
-    <script>
-        function copyEmail(cardElement) {
-            const email = "kauagasparetto@gmail.com";
-            
-            // Cria um elemento temporário para copiar
-            const el = document.createElement('textarea');
-            el.value = email;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            // Feedback visual
-            cardElement.classList.add('copied');
-            
-            // Remove o feedback depois de 2 segundos
-            setTimeout(() => {
-                cardElement.classList.remove('copied');
-            }, 2000);
-        }
-    </script>
 
 </body>
 </html>

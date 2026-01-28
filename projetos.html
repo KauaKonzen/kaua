@@ -3,370 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos | Kauã Konzen</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* --- Estilos da Galeria de Projetos --- */
-        
-        .projects-header {
-            text-align: center;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .projects-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        /* Card do Projeto */
-        .project-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .card-image {
-            height: 200px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .card-image::after {
-            content: "Ver Detalhes +";
-            position: absolute;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .project-card:hover .card-image::after {
-            opacity: 1;
-        }
-
-        .card-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .card-content p {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        /* --- SISTEMA DE MODAL (Janela Pop-up) --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            display: none; /* Escondido por padrão */
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-width: 800px;
-            max-height: 90vh; /* Altura máxima da tela */
-            border-radius: 12px;
-            padding: 40px;
-            position: relative;
-            overflow-y: auto; /* Permite rolar se o conteúdo for grande */
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #999;
-            line-height: 1;
-            transition: color 0.2s;
-        }
-
-        .close-btn:hover {
-            color: #000;
-        }
-
-        /* Estilos dentro do Modal */
-        .modal-body h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .modal-body .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        .modal-image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-
-        .tech-list {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .tech-tag {
-            background: #eee;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .gallery-item {
-            height: 100px;
-            background: #eee;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #777;
-            cursor: pointer;
-        }
-    </style>
+    <title>Projetos | Kauã Konzen - Branding, Growth & Desenvolvimento</title>
+    <meta name="description" content="Portfólio de Kauã Konzen: Co-fundador da Agência Creauth e especialista em Branding, Growth Marketing e Desenvolvimento de Software. Confira meus cases e projetos.">
+    <meta name="keywords" content="Kauã Konzen, Creauth, Branding, Growth Marketing, Web Development, Portfolio, Estratégia B2B">
+    <meta name="author" content="Kauã Konzen">
+    
+    <meta property="og:title" content="Projetos | Kauã Konzen - Portfólio Selecionado">
+    <meta property="og:description" content="Explore os projetos de branding, design de performance e desenvolvimento de Kauã Konzen.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/thumb-creauth.jpg"> <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <nav>
-            <a href="index.html" class="logo">Kauã Konzen</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Quem Sou</a></li>
-                <li><a href="projetos.html" class="active">Projetos</a></li>
-                <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="contato.html">Links</a></li>
-            </ul>
-        </nav>
+        <header>
+            <nav aria-label="Navegação Principal">
+                <a href="index.html" class="logo">Kauã Konzen</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Quem Sou</a></li>
+                    <li><a href="projetos.html" class="active" aria-current="page">Projetos</a></li>
+                    <li><a href="curriculo.html">Currículo</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
-            <div class="projects-header">
+            <section class="projects-header">
                 <h1>Portfólio Selecionado</h1>
-                <p>Uma mistura de empreendedorismo, código e estratégia de growth.</p>
-            </div>
+                <p>Empreendedorismo, Branding e Desenvolvimento.</p>
+            </section>
 
-            <div class="projects-grid">
+            <section class="projects-grid" aria-label="Galeria de Projetos">
                 
-                <div class="project-card" onclick="openModal('modal-creauth')">
-                    <div class="card-image" style="background-color: #111; color: #fff;">
-                        [LOGO CREAUTH]
+                <article class="project-card" onclick="openModal('modal-creauth')" tabindex="0" role="button" aria-haspopup="dialog">
+                    <div class="card-image">
+                        <img src="img/thumb-creauth.jpg" alt="Case de Negócios: Agência Creauth - Estruturação B2B" onerror="this.style.display='none'">
+                        <div class="card-overlay"><span>Ver Case de Negócios</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="card-tag">Business & Vendas</span>
+                        <span class="card-tag">Business & Sales</span>
                         <h3>Agência Creauth</h3>
-                        <p>Fundação e estruturação de processos de uma agência de marketing focada em performance.</p>
+                        <p>Co-fundador. Estruturação completa da máquina de vendas e processos comerciais B2B.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card" onclick="openModal('modal-finance')">
-                    <div class="card-image" style="background-color: #2e7d32; color: #fff;">
-                        [APP FINANCEIRO]
+                <article class="project-card" onclick="openModal('modal-nexus')" tabindex="0" role="button" aria-haspopup="dialog">
+                    <div class="card-image">
+                        <img src="img/thumb-nexus.jpg" alt="Brandbook Nexus Tech - Identidade Visual" onerror="this.style.display='none'">
+                        <div class="card-overlay"><span>Ver Brandbook</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Branding & Estratégia</span>
+                        <h3>Nexus Tech</h3>
+                        <p>Desenvolvimento integral de marca: Naming, Brandbook e Identidade Visual.</p>
+                    </div>
+                </article>
+
+                <article class="project-card" onclick="openModal('modal-finance')" tabindex="0" role="button" aria-haspopup="dialog">
+                    <div class="card-image">
+                        <img src="img/thumb-finance.jpg" alt="Interface do App Finanças Pessoais com AI" onerror="this.style.display='none'">
+                        <div class="card-overlay"><span>Testar App</span></div>
                     </div>
                     <div class="card-content">
                         <span class="card-tag">Dev & AI</span>
                         <h3>Finanças Pessoais AI</h3>
-                        <p>Aplicação web para controle financeiro desenvolvida com Lovable e integração de inteligência artificial.</p>
+                        <p>SaaS de controle financeiro desenvolvido com Lovable. MVP funcional disponível.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card" onclick="openModal('modal-gh')">
-                    <div class="card-image" style="background-color: #004d40; color: #fff;">
-                        [ACERVO GH]
+                <article class="project-card" onclick="openModal('modal-gh')" tabindex="0" role="button" aria-haspopup="dialog">
+                    <div class="card-image">
+                        <img src="img/thumb-gh.jpg" alt="Materiais de Performance e Growth Design - GH Branding" onerror="this.style.display='none'">
+                        <div class="card-overlay"><span>Ver Criativos</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="card-tag">Growth & Design</span>
-                        <h3>Banco de Referências GH</h3>
-                        <p>Coleção de eBooks, criativos e estratégias desenvolvidas durante minha atuação na GH Branding.</p>
+                        <span class="card-tag">Growth Design</span>
+                        <h3>Materiais de Performance</h3>
+                        <p>Criação de ativos de alta conversão (Ads e Ebooks) focados em métricas de Growth.</p>
                     </div>
-                </div>
+                </article>
 
-            </div>
+            </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Kauã Gasparetto Zavacki Konzen.</p>
+            <p>&copy; 2026 Kauã Konzen. Especialista em Marketing e Tecnologia.</p>
         </footer>
     </div>
 
-    <div id="modal-creauth" class="modal-overlay" onclick="closeModal(event)">
+    <div id="modal-creauth" class="modal-overlay" onclick="closeModal(event)" role="dialog" aria-labelledby="title-creauth">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('modal-creauth').classList.remove('active')">&times;</span>
+            <button class="close-btn" onclick="document.getElementById('modal-creauth').classList.remove('active')" aria-label="Fechar modal">&times;</button>
             <div class="modal-body">
-                <h2>Agência Creauth</h2>
+                <h2 id="title-creauth">Agência Creauth</h2>
                 <span class="subtitle">Co-Founder & Head de Vendas | 2025 - Atual</span>
                 
                 <div class="modal-image-placeholder">
-                    [FOTO DA EQUIPE OU DASHBOARD DE VENDAS]
+                    <img src="img/detail-creauth.jpg" alt="Equipe e Operação Agência Creauth" onerror="this.style.display='none'">
                 </div>
 
                 <div class="tech-list">
-                    <span class="tech-tag">Vendas B2B</span>
-                    <span class="tech-tag">Processos</span>
-                    <span class="tech-tag">Gestão de Equipe</span>
+                    <span class="tech-tag">Sales Operations</span>
+                    <span class="tech-tag">Gestão de CRM</span>
+                    <span class="tech-tag">Negociação B2B</span>
                 </div>
 
-                <p>A Creauth nasceu da necessidade de entregar performance real, não apenas posts bonitos. Como sócio-fundador, sou responsável pela operação "Full-cycle" de vendas.</p>
+                <p>Na Creauth, minha missão é transformar leads frios em receita recorrente. Lidero a operação comercial ponta a ponta.</p>
                 <br>
-                <h3>O que eu fiz:</h3>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Implementação de processos de prospecção fria.</li>
-                    <li>Coordenação entre times de Design e Tráfego.</li>
-                    <li>Estruturação do Customer Success para garantir LTV (Lifetime Value).</li>
+                <h3>Impacto e Resultados:</h3>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                    <li><strong>Prospecção Ativa (Outbound):</strong> Implementação de scripts e cadências para qualificação de leads.</li>
+                    <li><strong>Gestão de Pipeline:</strong> Controle rigoroso de oportunidades no CRM para previsibilidade de receita.</li>
+                    <li><strong>Retenção (LTV):</strong> Estruturação do onboarding para reduzir Churn.</li>
                 </ul>
+
+                <br>
+                <a href="https://www.instagram.com/creauth/" target="_blank" rel="noopener" class="btn" style="background: #000000; margin-top: 10px;">
+                    Acompanhe no Instagram
+                </a>
             </div>
         </div>
     </div>
 
-    <div id="modal-finance" class="modal-overlay" onclick="closeModal(event)">
+    <div id="modal-nexus" class="modal-overlay" onclick="closeModal(event)" role="dialog">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('modal-finance').classList.remove('active')">&times;</span>
+            <button class="close-btn" onclick="document.getElementById('modal-nexus').classList.remove('active')" aria-label="Fechar modal">&times;</button>
             <div class="modal-body">
-                <h2>App de Finanças AI</h2>
-                <span class="subtitle">Projeto Pessoal | Lovable + Supabase</span>
+                <h2>Nexus Tech - Branding</h2>
+                <span class="subtitle">Projeto Experimental de Identidade Visual</span>
                 
-                <div class="modal-image-placeholder">
-                    [SCREENSHOT DA TELA DO APP]
+                <a href="nexus-brandbook.pdf" target="_blank" title="Clique para abrir o PDF">
+                    <div class="modal-image-placeholder clickable-image">
+                        <img src="img/detail-nexus.jpg" alt="Capa do Brandbook Nexus Tech - Estratégia de Marca" onerror="this.style.display='none'">
+                    </div>
+                </a>
+
+                <div class="tech-list">
+                    <span class="tech-tag">Brand Strategy</span>
+                    <span class="tech-tag">Design System</span>
+                    <span class="tech-tag">Adobe Suite</span>
                 </div>
+
+                <p>Empresa fictícia criada para simular um desafio real de rebranding corporativo. O objetivo foi criar uma marca sólida e coerente.</p>
+                <br>
+                <h3>O Brandbook (67 Páginas):</h3>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                    <li><strong>Núcleo da Marca:</strong> Missão, Visão, Valores e Arquétipos.</li>
+                    <li><strong>Identidade Visual:</strong> Logotipo, grids, tipografia e paleta de cores.</li>
+                    <li><strong>Aplicações:</strong> Mockups de papelaria e interface digital.</li>
+                </ul>
+
+                <br>
+                <a href="nexus-brandbook.pdf" target="_blank" rel="noopener" class="btn" style="width: 100%; text-align: center;">
+                    📄 Ver Brandbook Completo (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-finance" class="modal-overlay" onclick="closeModal(event)" role="dialog">
+        <div class="modal-content">
+            <button class="close-btn" onclick="document.getElementById('modal-finance').classList.remove('active')" aria-label="Fechar modal">&times;</button>
+            <div class="modal-body">
+                <h2>App Finanças AI</h2>
+                <span class="subtitle">SaaS MVP | Lovable + Supabase</span>
+                
+                <a href="https://financeiroteste.lovable.app/" target="_blank" rel="noopener" title="Clique para testar">
+                    <div class="modal-image-placeholder clickable-image">
+                        <img src="img/detail-finance.jpg" alt="Dashboard do App de Finanças Pessoais" onerror="this.style.display='none'">
+                    </div>
+                </a>
 
                 <div class="tech-list">
                     <span class="tech-tag">Lovable.dev</span>
-                    <span class="tech-tag">Supabase</span>
-                    <span class="tech-tag">React Concepts</span>
+                    <span class="tech-tag">React AI</span>
+                    <span class="tech-tag">Supabase Auth</span>
                 </div>
 
-                <p>Cansado de planilhas complexas, decidi criar minha própria solução. Utilizando ferramentas Low-code potencializadas por IA, desenvolvi um sistema de controle de gastos.</p>
-                <br>
-                <h3>Funcionalidades:</h3>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Dashboard de visualização de gastos por categoria.</li>
-                    <li>Autenticação segura via Supabase.</li>
-                    <li>Interface minimalista focada em rapidez de inserção de dados.</li>
-                </ul>
-                <br>
-                <a href="#" class="btn">Ver Demonstração (Link Futuro)</a>
+                <p>Solução desenvolvida para simplificar a gestão financeira pessoal, focada em UX rápida.</p>
+                
+                <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 6px; margin: 20px 0; border: 1px solid #ffeeba;">
+                    <strong>⚠️ Status: Em Desenvolvimento (Beta)</strong><br>
+                    O aplicativo está funcional para testes.
+                </div>
+
+                <a href="https://financeiroteste.lovable.app/" target="_blank" rel="noopener" class="btn" style="width: 100%; text-align: center;">Acessar Versão de Teste</a>
             </div>
         </div>
     </div>
 
-    <div id="modal-gh" class="modal-overlay" onclick="closeModal(event)">
+    <div id="modal-gh" class="modal-overlay" onclick="closeModal(event)" role="dialog">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('modal-gh').classList.remove('active')">&times;</span>
+            <button class="close-btn" onclick="document.getElementById('modal-gh').classList.remove('active')" aria-label="Fechar modal">&times;</button>
             <div class="modal-body">
-                <h2>Banco de Referências GH</h2>
-                <span class="subtitle">Growth Marketing Internship</span>
+                <h2>Growth & Performance Design</h2>
+                <span class="subtitle">Estágio em Growth Marketing | GH Branding</span>
                 
-                <p>Durante meu estágio na GH Branding, atuei na interseção entre design e dados. Aqui estão alguns materiais públicos que ajudei a desenvolver ou que serviram de estudo de caso.</p>
+                <p>Design focado em funcionalidade e conversão. Atuei na criação de materiais para geração de leads e retenção.</p>
 
-                <h3 style="margin-top: 30px;">Galeria de Criativos & Ebooks:</h3>
+                <h3 style="margin-top: 30px;">Acervo de Produção:</h3>
+                
                 <div class="project-gallery">
-                    <div class="gallery-item">Capa Ebook 1</div>
-                    <div class="gallery-item">Criativo Ads 1</div>
-                    <div class="gallery-item">Relatório Exemplo</div>
-                    <div class="gallery-item">Landing Page Print</div>
+                    <div class="gallery-item"><img src="img/gh-1.jpg" alt="Material de Growth Marketing - Exemplo 1"></div>
+                    <div class="gallery-item"><img src="img/gh-2.jpg" alt="Material de Growth Marketing - Exemplo 2"></div>
+                    <div class="gallery-item"><img src="img/gh-3.jpg" alt="Material de Growth Marketing - Exemplo 3"></div>
+                    <div class="gallery-item"><img src="img/gh-4.jpg" alt="Material de Growth Marketing - Exemplo 4"></div>
+                    <div class="gallery-item"><img src="img/gh-5.jpg" alt="Material de Growth Marketing - Exemplo 5"></div>
+                    <div class="gallery-item"><img src="img/gh-6.jpg" alt="Material de Growth Marketing - Exemplo 6"></div>
+                    <div class="gallery-item"><img src="img/gh-7.jpg" alt="Material de Growth Marketing - Exemplo 7"></div>
+                    <div class="gallery-item"><img src="img/gh-8.jpg" alt="Material de Growth Marketing - Exemplo 8"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden'; // Impede a rolagem da página de fundo
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
-
-        function closeModal(event) {
-            // Fecha se clicar no overlay escuro (fora da caixa branca)
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Volta a rolagem
+        function closeModal(e) {
+            if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('close-btn')) {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+                document.body.style.overflow = 'auto';
             }
         }
     </script>
-
 </body>
 </html>
